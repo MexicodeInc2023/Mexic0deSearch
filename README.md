@@ -1,38 +1,38 @@
-# create-svelte
+# MEXIC0DE SEARCH
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Pestaña personalizada de busqueda para navegadores basados en Chromium :
 
-## Creating a project
+- Chrome
+- Edge
+- Brave
+  etc..
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Uso en Edge / Chrome
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+para poder hacer uso de la pestaña ve a configuración busca _Pestañas de Inicio , Inicio y Nuevas_ y en donde dice "Boton Incio" y ingresa siguiente url:
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+> https://mexcde-search.netlify.app/
 
-## Developing
+<br/>
+<hr>
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Contribuciones al proyecto
 
-```bash
-npm run dev
+Puedes descargar el proyecto usando
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+git clone https://github.com/ + url
 
-## Building
+e intalar las dependencias con el comando `npm install`, para levantar el proyecto usa `npm run dev`
 
-To create a production version of your app:
+### Proyecto desarrollado con
 
-```bash
-npm run build
-```
+- Vite + Svelte
+- Tailwind css
+- daisyUI
+  y el theme changer disponible en :
+  https://github.com/saadeghi/theme-change
 
-You can preview the production build with `npm run preview`.
+<hr>
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Un proyecto de MEXIC0DE
+
