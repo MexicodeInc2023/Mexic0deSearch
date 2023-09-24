@@ -8,6 +8,7 @@
 
 	import { titleLink, link, imageLink } from '../lib/store/stores';
 	import Link from '../lib/Link.svelte';
+	import Logo from '../lib/Logo.svelte';
 
 	const logo_pic = '../logo-pic.png';
 
@@ -58,7 +59,7 @@
 	});
 </script>
 
-<main>
+<body>
 	<Form bind:showModal>
 		<div slot="header">
 			<h2 class=" text-2xl ">Editar Tarjeta</h2>
@@ -141,28 +142,20 @@
 			</div>
 		</div>
 	</Form>
-	<div class="drawer drawer-end">
+	<main class="drawer drawer-end">
 		<input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-		<div class="drawer-content drawer-content-custom ">
-			<!-- Page content here -->
-			<!-- Arriba -->
-			<div
-				class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 m-10 justify-center"
+		<section class="drawer-content drawer-content-custom ">
+			<article
+				class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 m-10 justify-center place-items-center"
 			>
 				<!-- Hora y Tiempo -->
-				<div class="flex flex-col ">
-					<div class="flex justify-center items-center mt-28 h-48">
-						<Clock />
-					</div>
+				<div class="hidden sm:flex lg:flex">
+					<Clock />
 				</div>
-				<!-- Logo -->
-				<div class="flex flex-col ">
-					<div class="flex justify-center items-center  img-mex w-96 m-auto">
-						<img src={logo_pic} alt="Logo Mexic0de" class="rounded-full " />
-					</div>
-				</div>
+				<Logo {logo_pic} />
+
 				<!-- Seleccionador de Tema -->
-				<div class="flex flex-col ">
+				<div class="flex flex-col">
 					<div class="flex justify-center items-center mt-28 h-48 butDiv">
 						<label for="my-drawer-4" class="drawer-button button show-drawer" data-text="Awesome">
 							<span class="actual-text text-primary">&nbsp;Cambiar Tema &nbsp; </span>
@@ -170,14 +163,15 @@
 						</label>
 					</div>
 				</div>
-			</div>
+			</article>
 			<!-- En Medio -->
-			<div class="flex justify-center mt-6 min-w-screen">
+			<article>
 				<Search />
-			</div>
+			</article>
+
 			<!-- Abajo -->
-			<div
-				class="grid grid-flow-row md:grid-flow-col gap-5 auto-cols-max mt-10 mb-10 justify-center "
+			<article
+				class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-5 auto-cols-max mt-10 mx-40 justify-center"
 			>
 				{#each $titleLink as title, i}
 					<Link
@@ -187,43 +181,9 @@
 						on:myevent={() => handleClick(i)}
 					/>
 				{/each}
-
-				<!-- <a
-            href={$link}
-            class="relative block overflow-hidden rounded-xl  bg-cover bg-center bg-no-repeat"
-            style="background-image: url({$image})"
-          >
-            <div class="absolute inset-0 bg-black/75" />
-  
-            <div
-              class="relative flex items-start justify-between p-4 sm:p-6 lg:p-8"
-            >
-              <div class="sm:pt-18 pt-12 text-white lg:pt-24">
-                <h3 class="text-xl font-bold sm:text-2xl">{$titleLink}</h3>
-  
-                <p class="text-sm">Plataforma de {$titleLink}</p>
-              </div>
-              <button class="z-50" on:click|preventDefault={handleClick}>
-                <span
-                  class="inline-flex items-center gap-0.5 rounded-full bg-black px-2 py-1 text-xs font-semibold text-white "
-                >
-                  EDITAR
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-4 w-4 text-secondary"
-                    fill="currentColor"
-                    viewBox="0 0 256 256"
-                    ><path
-                      d="M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z"
-                    /></svg
-                  >
-                </span>
-              </button>
-            </div>
-          </a> -->
-			</div>
-		</div>
-		<div class="drawer-side">
+			</article>
+		</section>
+		<aside class="drawer-side">
 			<label for="my-drawer-4" class="drawer-overlay" />
 			<ul class="menu p-4 w-80 bg-base-100 text-base-content">
 				<p>Selecciona un Tema</p>
@@ -294,20 +254,13 @@
 					<button data-set-theme="acid">Acid</button>
 				</li>
 			</ul>
-		</div>
-	</div>
-</main>
+		</aside>
+	</main>
+</body>
 
 <style>
 	/* Mobile */
 	@media (max-width: 768px) {
-		img {
-			width: 100px;
-			height: 100px;
-		}
-		.img-mex {
-			margin-top: 15px;
-		}
 		.butDiv {
 			margin-top: 15px;
 		}
